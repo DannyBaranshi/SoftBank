@@ -9,9 +9,12 @@ export const routes: Routes = [
   {
     path: '',
     redirectTo: 'inicio',
-    pathMatch: 'full',
-    component: InicioComponent,
-    title: 'Banco Web | Inicio'
+    pathMatch: 'full'
+  },
+  {
+  path: 'inicio',
+  component: InicioComponent,
+  title: 'Banco Web | Inicio'
   },
   {
     path: 'productos',

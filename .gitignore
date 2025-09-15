@@ -1,4 +1,35 @@
-/dist/
+# Node dependencies
 /node_modules/
-/.angular/
-/.env
+
+# Angular build output
+/dist/
+/out-tsc/
+/coverage/
+
+# Angular cache
+.angular/cache
+
+# Compiled output
+/*.js
+/*.js.map
+/*.d.ts
+
+# Environment files
+/src/environments/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Sass cache
+.sass-cache/
+
+# VSCode settings folder
+.vscode/
+
+# Lock files
+// package-lock.json
+// yarn.lock
+// pnpm-lock.yaml

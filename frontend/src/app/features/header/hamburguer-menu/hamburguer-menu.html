@@ -1,0 +1,24 @@
+<button class="hamburger-button" (click)="toggleMenu()">☰</button>
+
+<div class="menu-panel" [class.open]="menuOpen()">
+    <div class="menu-header">
+        <div class="avatar-placeholder">Avatar perfil</div>
+    </div>
+  <div class="menu-content">
+
+    <div *ngIf="!isLoggedIn()">
+      <button class="menu-btn" (click)="iniciarSesion()">Iniciar Sesión</button>
+      <button class="menu-btn">Registrarse</button>
+    </div>
+
+    <div *ngIf="isLoggedIn()">
+        <button class="menu-btn">Cuentas</button>
+        <button class="menu-btn">Transferencias</button>
+        <button class="menu-btn">Saldo</button>
+        <button class="menu-btn">Solicitar Productos</button>
+        <button class="menu-btn">Certificados</button>
+        <button class="menu-btn logout" (click)="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+
+  </div>
+</div>
