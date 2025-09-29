@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/header/logo/logo.spec.ts"],
+  "sourcesContent": ["import { ComponentFixture, TestBed } from '@angular/core/testing';\n\nimport { Logo } from './logo';\n\ndescribe('Logo', () => {\n  let component: Logo;\n  let fixture: ComponentFixture<Logo>;\n\n  beforeEach(async () => {\n    await TestBed.configureTestingModule({\n      imports: [Logo]\n    })\n    .compileComponents();\n\n    fixture = TestBed.createComponent(Logo);\n    component = fixture.componentInstance;\n    fixture.detectChanges();\n  });\n\n  it('should create', () => {\n    expect(component).toBeTruthy();\n  });\n});\n"],
+  "mappings": ";;;;;;;;;;;;;;AAAA;;;AAEA;AAEA,aAAS,QAAQ,MAAK;AACpB,UAAI;AACJ,UAAI;AAEJ,iBAAW,MAAW;AACpB,cAAM,QAAQ,uBAAuB;UACnC,SAAS,CAAC,IAAI;SACf,EACA,kBAAiB;AAElB,kBAAU,QAAQ,gBAAgB,IAAI;AACtC,oBAAY,QAAQ;AACpB,gBAAQ,cAAa;MACvB,EAAC;AAED,SAAG,iBAAiB,MAAK;AACvB,eAAO,SAAS,EAAE,WAAU;MAC9B,CAAC;IACH,CAAC;;;",
+  "names": []
+}

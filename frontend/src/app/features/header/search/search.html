@@ -1,6 +1,11 @@
 <div class="box">
-  <input type="text" placeholder="Search...">
-  <a href="#">
+  <input 
+    type="text" 
+    placeholder="Search..." 
+    [(ngModel)]="query"
+    (keyup.enter)="onSearch()" />
+    
+  <button type="button" (click)="onSearch()">
     <i class="fas fa-search"></i>
-  </a>
+  </button>
 </div>

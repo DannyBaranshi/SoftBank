@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/app.scss"],
+  "sourcesContent": [":host {\r\n  display: block;\r\n  min-height: 100vh;\r\n  font-family: 'Courier New', Courier, monospace;\r\n}"],
+  "mappings": ";AAAA;AACE,WAAA;AACA,cAAA;AACA;IAAA,aAAA;IAAA,OAAA;IAAA;;",
+  "names": []
+}

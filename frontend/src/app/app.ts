@@ -9,6 +9,7 @@ import { Header } from './features/header/header/header';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
+
 export class AppComponent {
   protected readonly title = signal('frontend');
 }
