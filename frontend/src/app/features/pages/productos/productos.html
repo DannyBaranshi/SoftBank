@@ -1,1 +1,60 @@
-<p>productos works!</p>
+<div class="productos-container">
+  <h1 class="page-title">Nuestros Productos</h1>
+
+  <!-- Productos Disponibles -->
+  <div class="productos-grid">
+    <div *ngFor="let producto of productos" class="producto-card">
+      <h3>{{ producto.nombre }}</h3>
+      <p>{{ producto.descripcion }}</p>
+      <button class="btn-primary" (click)="verProducto(producto)">
+        {{ isLoggedIn() ? 'Ver Detalle' : 'Más Información' }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Productos Adquiridos (Solo si hay sesión) -->
+  <div *ngIf="isLoggedIn()" class="productos-adquiridos">
+    <h2>Mis Productos</h2>
+    <div *ngIf="misProductos.length; else noProductos">
+      <ul>
+        <li *ngFor="let p of misProductos">{{ p.nombre }}</li>
+      </ul>
+    </div>
+    <ng-template #noProductos>
+      <p>No tienes productos adquiridos.</p>
+    </ng-template>
+  </div>
+</div>
+
+<!-- Modal Detalle de Producto -->
+<div class="modal-overlay" *ngIf="productoSeleccionado">
+  <div class="modal">
+    <h2>{{ productoSeleccionado?.nombre }}</h2>
+    <p>{{ productoSeleccionado?.descripcionLarga }}</p>
+
+    <div *ngIf="isLoggedIn(); else loginPrompt">
+      <h3>Simulador Financiero</h3>
+      <div class="simulador">
+        <input type="number" placeholder="Monto ($)" [(ngModel)]="montoSimulado" />
+        <input type="number" placeholder="Tasa de interés (%)" [(ngModel)]="tasaInteres" />
+        <input type="number" placeholder="Plazo (meses)" [(ngModel)]="plazoMeses" />
+        <button class="btn-primary" (click)="simularFinanciero()">Simular</button>
+
+        <div *ngIf="resultadoSimulacion !== null" class="resultado">
+          <p>Cuota mensual aproximada: <strong>${{ resultadoSimulacion }}</strong></p>
+        </div>
+      </div>
+
+      <button class="btn-primary" (click)="adquirirProducto(productoSeleccionado!)">
+        Adquirir Producto
+      </button>
+    </div>
+
+    <ng-template #loginPrompt>
+      <p>Inicia sesión para adquirir este producto.</p>
+      <button class="btn-secondary" (click)="redirigirLogin()">Ir a Inicio de Sesión</button>
+    </ng-template>
+
+    <button class="btn-secondary cerrar" (click)="cerrarModal()">Cerrar</button>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="crear-cuenta">
+  <h2>Crear nueva cuenta</h2>
+
+  <div *ngIf="!tipoSeleccionado">
+    <p>Seleccione el tipo de cuenta a abrir:</p>
+    <button (click)="seleccionarTipo('ahorros')">Cuenta de Ahorros</button>
+    <button (click)="seleccionarTipo('corriente')">Cuenta Corriente</button>
+  </div>
+
+  <div *ngIf="tipoSeleccionado">
+    <h3>Confirmar apertura de cuenta {{ tipoSeleccionado }}</h3>
+    <button (click)="confirmarCreacion()">Confirmar</button>
+  </div>
+</div>

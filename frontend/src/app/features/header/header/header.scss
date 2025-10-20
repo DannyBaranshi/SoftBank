@@ -2,12 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #111;
+  background-color: #fff;
   padding: 10px 20px;
   border-radius: 12px;
-  border: 2px solid #fff;
+  border: 2px solid #2596be;
   font-family: 'Courier New', Courier, monospace;
-  color: white;
+  color: #2596be;
 }
 
 .logo {
@@ -27,7 +27,7 @@
 
 .nav button {
   background: transparent;
-  color: white;
+  color: #2596be;
   border: none;
   font-size: 16px;
   margin: 0 10px;
@@ -37,7 +37,7 @@
 
 .nav button.active,
 .nav button:hover {
-  color: #ff5e5e;
+  color: #1b4160;
   text-decoration: none;
 }
 
