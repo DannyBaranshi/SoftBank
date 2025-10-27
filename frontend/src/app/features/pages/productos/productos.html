@@ -12,45 +12,19 @@
     </div>
   </div>
 
-  <!-- Productos Adquiridos (Solo si hay sesión) -->
-  <div *ngIf="isLoggedIn()" class="productos-adquiridos">
-    <h2>Mis Productos</h2>
-    <div *ngIf="misProductos.length; else noProductos">
-      <ul>
-        <li *ngFor="let p of misProductos">{{ p.nombre }}</li>
-      </ul>
-    </div>
-    <ng-template #noProductos>
-      <p>No tienes productos adquiridos.</p>
-    </ng-template>
-  </div>
-</div>
-
-<!-- Modal Detalle de Producto -->
+ <!-- Modal Detalle de Producto -->
 <div class="modal-overlay" *ngIf="productoSeleccionado">
   <div class="modal">
-<<<<<<< HEAD
-    <h2>{{ productoSeleccionado?.nombre }}</h2>
-    <p>{{ productoSeleccionado?.descripcionLarga }}</p>
-
-=======
     <h2>{{ productoSeleccionado.nombre }}</h2>
     <p>{{ productoSeleccionado.descripcionLarga }}</p>
 
     <!-- Simulador y acciones -->
->>>>>>> 7f39322b (Segunda entrega version dos)
     <div *ngIf="isLoggedIn(); else loginPrompt">
       <h3>Simulador Financiero</h3>
       <div class="simulador">
         <input type="number" placeholder="Monto ($)" [(ngModel)]="montoSimulado" />
         <input type="number" placeholder="Tasa de interés (%)" [(ngModel)]="tasaInteres" />
         <input type="number" placeholder="Plazo (meses)" [(ngModel)]="plazoMeses" />
-<<<<<<< HEAD
-        <button class="btn-primary" (click)="simularFinanciero()">Simular</button>
-
-        <div *ngIf="resultadoSimulacion !== null" class="resultado">
-          <p>Cuota mensual aproximada: <strong>${{ resultadoSimulacion }}</strong></p>
-=======
 
         <div style="margin: 0.5rem 0;">
           <label><input type="radio" name="tipo" value="simple" [(ngModel)]="tipoCalculo" /> Interés Simple</label>
@@ -66,23 +40,15 @@
         <div *ngIf="resultadoSimulacion" class="resultado">
           <p>Total a pagar: <strong>${{ resultadoSimulacion.total }}</strong></p>
           <p>Cuota mensual aproximada: <strong>${{ resultadoSimulacion.cuota }}</strong></p>
->>>>>>> 7f39322b (Segunda entrega version dos)
         </div>
       </div>
 
       <button class="btn-primary" (click)="adquirirProducto(productoSeleccionado!)">
-<<<<<<< HEAD
-        Adquirir Producto
-      </button>
-    </div>
-
-=======
         Solicitar Producto
       </button>
     </div>
 
     <!-- Template alternativo para no autenticados -->
->>>>>>> 7f39322b (Segunda entrega version dos)
     <ng-template #loginPrompt>
       <p>Inicia sesión para adquirir este producto.</p>
       <button class="btn-secondary" (click)="redirigirLogin()">Ir a Inicio de Sesión</button>
@@ -91,7 +57,4 @@
     <button class="btn-secondary cerrar" (click)="cerrarModal()">Cerrar</button>
   </div>
 </div>
-<<<<<<< HEAD
-=======
 
->>>>>>> 7f39322b (Segunda entrega version dos)

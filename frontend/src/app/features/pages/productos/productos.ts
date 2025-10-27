@@ -1,16 +1,9 @@
-<<<<<<< HEAD
-import { Component, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // para ngModel
-import { Router } from '@angular/router';
-=======
 import { Component, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
 import { ModalLoginService } from '../../services/modal-login.service';
->>>>>>> 7f39322b (Segunda entrega version dos)
 
 interface Producto {
   id: number;
@@ -28,13 +21,6 @@ interface Producto {
 })
 export class ProductosComponent {
 
-<<<<<<< HEAD
-  constructor(private router: Router) {}
-
-  // Estado de sesión (simulado con signals)
-  private _isLoggedIn = signal(false); // Reemplazar luego con servicio real
-  isLoggedIn = this._isLoggedIn.asReadonly();
-=======
   constructor(
     private router: Router,
     private authService: AuthService,
@@ -43,7 +29,6 @@ export class ProductosComponent {
 
   // Estado de sesión real
   isLoggedIn = computed(() => this.authService.usuarioActual() !== null);
->>>>>>> 7f39322b (Segunda entrega version dos)
 
   // Productos disponibles
   productos: Producto[] = [
@@ -54,28 +39,17 @@ export class ProductosComponent {
     { id: 5, nombre: 'Cuenta Empresarial', descripcion: 'Gestiona tu negocio fácilmente.', descripcionLarga: 'Soluciones financieras diseñadas para empresas en crecimiento.' }
   ];
 
-<<<<<<< HEAD
-  // Productos adquiridos
-  misProductos: Producto[] = [];
-
-  // Estado de modal y simulador
-=======
   // Productos adquiridos (mock temporal, puede venir del usuario)
   misProductos: Producto[] = [];
 
   // Estado modal y simulador
->>>>>>> 7f39322b (Segunda entrega version dos)
   productoSeleccionado: Producto | null = null;
   montoSimulado = 0;
   tasaInteres = 0;
   plazoMeses = 0;
-<<<<<<< HEAD
-  resultadoSimulacion: number | null = null;
-=======
   tipoCalculo: 'simple' | 'compuesto' = 'simple';
   aplicar4x1000 = false;
   resultadoSimulacion: { total: number; cuota: number } | null = null;
->>>>>>> 7f39322b (Segunda entrega version dos)
 
   // -------------------------------
   // Funciones principales
@@ -99,23 +73,6 @@ export class ProductosComponent {
   }
 
   redirigirLogin() {
-<<<<<<< HEAD
-    // Redirección simulada (ajustar al router real)
-    alert('Redirigiendo a inicio de sesión...');
-    this.router.navigate(['/inicio']);
-  }
-
-  adquirirProducto(producto: Producto) {
-    if (!this.misProductos.includes(producto)) {
-      this.misProductos.push(producto);
-      alert(`Has adquirido: ${producto.nombre}`);
-    } else {
-      alert('Ya tienes este producto adquirido.');
-    }
-    this.cerrarModal();
-  }
-
-=======
     this.modalService.open();
   }
 
@@ -128,17 +85,11 @@ export class ProductosComponent {
   // -------------------------------
   // Simulador Financiero
   // -------------------------------
->>>>>>> 7f39322b (Segunda entrega version dos)
   simularFinanciero() {
     if (this.montoSimulado <= 0 || this.tasaInteres <= 0 || this.plazoMeses <= 0) {
       alert('Completa todos los campos con valores válidos.');
       return;
     }
-<<<<<<< HEAD
-    const tasaMensual = this.tasaInteres / 100 / 12;
-    const cuota = (this.montoSimulado * tasaMensual) / (1 - Math.pow(1 + tasaMensual, -this.plazoMeses));
-    this.resultadoSimulacion = parseFloat(cuota.toFixed(2));
-=======
 
     const P = this.montoSimulado;
     const r = this.tasaInteres / 100 / 12; // tasa mensual
@@ -161,6 +112,5 @@ export class ProductosComponent {
       total: parseFloat(total.toFixed(2)),
       cuota: parseFloat(cuota.toFixed(2))
     };
->>>>>>> 7f39322b (Segunda entrega version dos)
   }
 }

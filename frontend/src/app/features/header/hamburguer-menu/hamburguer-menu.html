@@ -7,43 +7,22 @@
 <div class="menu-panel" [class.open]="menuOpen()">
   <div class="menu-header">
     <div class="avatar-placeholder">
-<<<<<<< HEAD
-      <ng-container *ngIf="isLoggedIn(); else guestIcon">
-=======
       <ng-container *ngIf="isLoggedIn; else guestIcon">
->>>>>>> 7f39322b (Segunda entrega version dos)
         <span *ngIf="usuarioActual">{{ usuarioActual.charAt(0).toUpperCase() }}</span>
       </ng-container>
       <ng-template #guestIcon>?</ng-template>
     </div>
-<<<<<<< HEAD
-    <h3 *ngIf="isLoggedIn()" class="user-name">{{ usuarioActual }}</h3>
-=======
     <h3 *ngIf="isLoggedIn" class="user-name">{{ usuarioActual }}</h3>
->>>>>>> 7f39322b (Segunda entrega version dos)
   </div>
 
   <div class="menu-content">
     <!-- Sesión no iniciada -->
-<<<<<<< HEAD
-    <div *ngIf="!isLoggedIn()">
-=======
     <div *ngIf="!isLoggedIn">
->>>>>>> 7f39322b (Segunda entrega version dos)
       <button class="menu-btn" (click)="openLoginModal()">Iniciar Sesión</button>
       <button class="menu-btn" (click)="openRegisterModal()">Registrarse</button>
     </div>
 
     <!-- Sesión iniciada -->
-<<<<<<< HEAD
-    <div *ngIf="isLoggedIn()">
-      <button class="menu-btn" (click)="navigateTo('/cuentas'); closeMenu()">Cuentas</button>
-      <button class="menu-btn" (click)="closeMenu()">Transferencias</button>
-      <button class="menu-btn" (click)="closeMenu()">Saldo</button>
-      <button class="menu-btn" (click)="closeMenu()">Solicitar Productos</button>
-      <button class="menu-btn" (click)="closeMenu()">Certificados</button>
-      <button class="menu-btn logout" (click)="openLogoutConfirm(); closeMenu()">Cerrar Sesión</button>
-=======
     <div *ngIf="isLoggedIn">
       <button class="menu-btn" (click)="navigateTo('/cuentas'); closeMenu()">Cuentas</button>
       <button class="menu-btn" (click)="navigateTo('/transferencias'); closeMenu()">Transferencias</button>
@@ -51,17 +30,12 @@
       <button class="menu-btn" (click)="navigateTo('/solicitar-productos'); closeMenu()">Solicitar Productos</button>
       <button class="menu-btn" (click)="navigateTo('/certificados'); closeMenu()">Certificados</button>
       <button class="menu-btn logout" (click)="openLogoutConfirm(); closeMenu(); navigateTo('/inicio')">Cerrar Sesión</button>
->>>>>>> 7f39322b (Segunda entrega version dos)
     </div>
   </div>
 </div>
 
 <!-- Modal Inicio de Sesión -->
-<<<<<<< HEAD
-<div class="modal-overlay" *ngIf="showLoginModal" (click)="closeModal()">
-=======
 <div class="modal-overlay" *ngIf="modalService.showLoginModal()" (click)="closeModal()">
->>>>>>> 7f39322b (Segunda entrega version dos)
   <div class="modal" role="dialog" (click)="$event.stopPropagation()">
     <h2>Iniciar Sesión</h2>
     <form (submit)="iniciarSesion($event)">

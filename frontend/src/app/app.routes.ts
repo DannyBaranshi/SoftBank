@@ -5,8 +5,6 @@ import { ProductosComponent } from './features/pages/productos/productos';
 import { InformacionComponent } from './features/pages/informacion/informacion';
 import { SearchResultsComponent } from './features/pages/search-results/search-results';
 import { AccountsComponent } from './features/accounts/accounts.component';
-<<<<<<< HEAD
-=======
 import { CreateAccountComponent } from './features/accounts/account_create/create-account.component';
 import { TransferComponent } from './features/pages/transferencias/transfer.component'
 import { BalanceComponent } from './features/pages/saldo/balance.component'
@@ -14,7 +12,6 @@ import { OrderProductsComponent } from './features/pages/solicitar-productos/ord
 import { CertificatesComponent } from './features/pages/certificados/certificates.component'
 
 import { AuthGuard } from './features/services/auth/auth.guard';
->>>>>>> 7f39322b (Segunda entrega version dos)
 
 export const routes: Routes = [
   {
@@ -41,11 +38,6 @@ export const routes: Routes = [
     component: SearchResultsComponent,
     title: 'Banco Web | Busqueda'
   },
-<<<<<<< HEAD
-  { path: 'cuentas',
-    component: AccountsComponent,
-    title: 'Banco Web | Cuentas'
-=======
 
   // Requieren autenticación:
   { path: 'cuentas', 
@@ -73,6 +65,5 @@ export const routes: Routes = [
   { path: 'certificados',
     component: CertificatesComponent,
     canActivate: [AuthGuard]
->>>>>>> 7f39322b (Segunda entrega version dos)
   },
 ];

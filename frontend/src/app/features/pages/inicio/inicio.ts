@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-=======
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth/auth.service'; 
->>>>>>> 7f39322b (Segunda entrega version dos)
 
 @Component({
   selector: 'app-inicio',

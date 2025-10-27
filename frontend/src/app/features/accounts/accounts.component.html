@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-<div class="cuentas-container">
-  <h2>Mis Cuentas</h2>
-
-  <div *ngIf="cuentas.length === 0; else listaCuentas">
-    <p>No tienes cuentas aún.</p>
-    <button (click)="crearCuenta()">Crear cuenta</button>
-  </div>
-
-  <ng-template #listaCuentas>
-    <div *ngFor="let cuenta of cuentas" class="cuenta-card">
-      <h3>{{ cuenta.tipo | titlecase }}</h3>
-      <p>Número: {{ cuenta.numero }}</p>
-      <p>Creada: {{ cuenta.fechaCreacion | date:'short' }}</p>
-    </div>
-
-    <div *ngIf="cuentas.length < 2">
-      <button (click)="crearCuenta()">Abrir otro tipo de cuenta</button>
-    </div>
-  </ng-template>
-</div>
-=======
 <!-- src/app/features/accounts/accounts.component.html -->
 
 <section class="p-6">
@@ -40,4 +18,3 @@
     <button class="btn btn-primary mt-4" (click)="crearNueva()">Agregar otra cuenta</button>
   </ng-template>
 </section>
->>>>>>> 7f39322b (Segunda entrega version dos)
