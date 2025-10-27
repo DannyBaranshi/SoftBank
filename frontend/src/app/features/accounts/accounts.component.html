@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="cuentas-container">
   <h2>Mis Cuentas</h2>
 
@@ -18,3 +19,25 @@
     </div>
   </ng-template>
 </div>
+=======
+<!-- src/app/features/accounts/accounts.component.html -->
+
+<section class="p-6">
+  <h2 class="text-2xl font-semibold mb-4">Mis Cuentas</h2>
+
+  <div *ngIf="cuentas.length === 0; else lista">
+    <p>No tiene cuentas activas.</p>
+    <button class="btn btn-primary mt-3" (click)="crearNueva()">Crear nueva cuenta</button>
+  </div>
+
+  <ng-template #lista>
+    <ul class="space-y-2">
+      <li *ngFor="let cuenta of cuentas" class="border rounded p-3">
+        <strong>{{ cuenta.tipo | titlecase }}</strong> — Saldo: {{ cuenta.saldo | currency:'COP':'symbol-narrow' }}
+        <p class="text-sm text-gray-500">Creada: {{ cuenta.fechaCreacion | date:'short' }}</p>
+      </li>
+    </ul>
+    <button class="btn btn-primary mt-4" (click)="crearNueva()">Agregar otra cuenta</button>
+  </ng-template>
+</section>
+>>>>>>> 7f39322b (Segunda entrega version dos)

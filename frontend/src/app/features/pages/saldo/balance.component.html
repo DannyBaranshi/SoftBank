@@ -1,0 +1,19 @@
+<!-- src/app/features/saldo/saldo.component.html -->
+
+<section class="p-6">
+  <h2 class="text-2xl mb-4 font-semibold">Gestión de Saldo</h2>
+
+  <label class="block mb-2">Seleccione cuenta:</label>
+  <select [(ngModel)]="cuentaSeleccionada" class="border p-2 rounded w-full mb-4">
+    <option *ngFor="let c of cuentas" [value]="c.id">
+      {{ c.tipo | titlecase }} - {{ c.saldo | currency:'COP':'symbol-narrow' }}
+    </option>
+  </select>
+
+  <label class="block mb-2">Monto a recargar:</label>
+  <input type="number" [(ngModel)]="monto" class="border p-2 rounded w-full mb-4" />
+
+  <button (click)="recargar()" class="btn btn-primary">Recargar</button>
+
+  <p *ngIf="mensaje" class="mt-3 text-blue-700">{{ mensaje }}</p>
+</section>

@@ -1,0 +1,17 @@
+<div class="certificados-container">
+  <h1>Mis Certificados</h1>
+  <p class="intro">Aquí puedes consultar y descargar los certificados de tus productos financieros.</p>
+
+  <div *ngIf="certificados().length; else sinCertificados" class="grid">
+    <div *ngFor="let c of certificados()" class="certificado-card">
+      <h3>{{ c.producto }}</h3>
+      <p>{{ c.descripcion }}</p>
+      <p class="fecha">Emitido el {{ c.fechaEmision }}</p>
+      <button class="btn-primary" (click)="descargarCertificado(c)">Descargar</button>
+    </div>
+  </div>
+
+  <ng-template #sinCertificados>
+    <p class="no-data">Aún no tienes certificados disponibles.</p>
+  </ng-template>
+</div>

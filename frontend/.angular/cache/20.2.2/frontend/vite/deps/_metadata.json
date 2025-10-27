@@ -1,49 +1,58 @@
 {
-  "hash": "fc033e93",
-  "configHash": "ade5abca",
-  "lockfileHash": "b15081fc",
-  "browserHash": "500f9f7e",
+  "hash": "1b254e72",
+  "configHash": "f74e6b5c",
+  "lockfileHash": "4546fcaa",
+  "browserHash": "9da72066",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "f5195ce7",
+      "fileHash": "3a1377df",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "823dc7a9",
+      "fileHash": "9e3b3c34",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "1d369497",
+      "fileHash": "bc2dd917",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "12e9bae0",
+      "fileHash": "93b7d7d9",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "d71475c6",
+      "fileHash": "3f82f2ef",
+      "needsInterop": false
+    },
+    "@angular/core/rxjs-interop": {
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/rxjs-interop.mjs",
+      "file": "@angular_core_rxjs-interop.js",
+      "fileHash": "6690e678",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-536ZDAQN": {
-      "file": "chunk-536ZDAQN.js"
+    "chunk-AAW4LYF2": {
+      "file": "chunk-AAW4LYF2.js"
     },
-    "chunk-QXFUJLY5": {
-      "file": "chunk-QXFUJLY5.js"
+    "chunk-CBRP7JJP": {
+      "file": "chunk-CBRP7JJP.js"
     },
-    "chunk-HWDDM2K5": {
-      "file": "chunk-HWDDM2K5.js"
+    "chunk-DO275CUD": {
+      "file": "chunk-DO275CUD.js"
+    },
+    "chunk-IB2YEQXH": {
+      "file": "chunk-IB2YEQXH.js"
     }
   }
 }

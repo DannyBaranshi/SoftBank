@@ -10,24 +10,6 @@ Este proyecto forma parte del ecosistema **SoftBank**, actuando como capa de pre
 
 ---
 
-## 📁 Tabla de Contenidos
-
-1. [Descripción General](#-descripción-general)
-2. [Características Principales](#-características-principales)
-3. [Arquitectura y Estructura](#-arquitectura-y-estructura)
-4. [Tecnologías Utilizadas](#-tecnologías-utilizadas)
-5. [Instalación y Ejecución](#-instalación-y-ejecución)
-6. [Estructura de Carpetas](#-estructura-de-carpetas)
-7. [Rutas y Navegación](#-rutas-y-navegación)
-8. [Componentes Principales](#-componentes-principales)
-9. [Búsqueda y Filtrado](#-búsqueda-y-filtrado)
-10. [Estilos y Diseño](#-estilos-y-diseño)
-11. [Pruebas y Validación](#-pruebas-y-validación)
-12. [Futuras Extensiones](#-futuras-extensiones)
-13. [Licencia](#-licencia)
-
----
-
 ## 📜 Descripción General
 
 El proyecto **SoftBank Frontend** constituye la interfaz del sistema SoftBank. Está diseñado para proporcionar:
@@ -36,8 +18,6 @@ El proyecto **SoftBank Frontend** constituye la interfaz del sistema SoftBank. E
 - Componentes reutilizables y escalables.
 - Arquitectura modular orientada a la mantenibilidad.
 - Interfaz moderna, limpia y responsiva.
-
-Su desarrollo se centra en principios de **componentización**, **separación de responsabilidades** y **buenas prácticas de desarrollo frontend**.
 
 ---
 

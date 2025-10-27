@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class Search {
   query: string = '';
-  items: string[] = ['inicio', 'productos', 'información', 'works!'];
+  items: string[] = ['texto', 'productos', 'información', 'works!'];
   results: string[] = [];
 
   constructor(private router: Router) {}
