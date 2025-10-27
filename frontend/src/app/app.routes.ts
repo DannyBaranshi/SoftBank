@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 import { InicioComponent } from './features/pages/inicio/inicio';
 import { ProductosComponent } from './features/pages/productos/productos';
 import { InformacionComponent } from './features/pages/informacion/informacion';
-import { SearchResultsComponent } from './features/pages/search-results/search-results';
+import { SearchResults } from './features/pages/search-results/search-results';
 import { AccountsComponent } from './features/accounts/accounts.component';
 import { CreateAccountComponent } from './features/accounts/account_create/create-account.component';
 import { TransferComponent } from './features/pages/transferencias/transfer.component'
@@ -35,7 +35,7 @@ export const routes: Routes = [
     title: 'Banco Web | Información'
   },
   { path: 'search',
-    component: SearchResultsComponent,
+    component: SearchResults,
     title: 'Banco Web | Busqueda'
   },
 

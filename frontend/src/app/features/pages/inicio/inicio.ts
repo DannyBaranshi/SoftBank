@@ -14,8 +14,8 @@ export class InicioComponent implements OnInit {
   usuarioActual: any = null;
 
   imagenes = [
-    'assets/publicidad1.png',
-    'assets/publicidad2.png'
+    'assets/publicidad1.jpg',
+    'assets/publicidad2.jpg'
   ];
 
   indiceActual = 0;

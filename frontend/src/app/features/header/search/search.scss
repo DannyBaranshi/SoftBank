@@ -6,7 +6,7 @@
 
 :host {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -55,4 +55,10 @@
 .box button:focus {
   outline: none;
   box-shadow: none;
+}
+
+mark {
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
 }

@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-search-results',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './search-results.html',
-  styleUrl: './search-results.scss'
+  styleUrls: ['./search-results.scss']
 })
-export class SearchResultsComponent {
-
+export class SearchResults {
+  @Input() results: string[] = [];
 }
