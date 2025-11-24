@@ -1,0 +1,38 @@
+<section class="p-6">
+  <h2 class="text-2xl mb-4 font-semibold">Pago de Tarjeta de Crédito</h2>
+
+  <label class="block mb-2">Tarjeta:</label>
+  <select [(ngModel)]="tarjetaSeleccionada" class="border p-2 rounded w-full mb-4">
+    <option *ngFor="let t of tarjetas" [value]="t.id">{{ t.numero }} — Disponible: {{ t.cupoDisponible | currency:'COP':'symbol-narrow' }}</option>
+  </select>
+
+  <label class="block mb-2">Cuenta de Origen:</label>
+  <select [(ngModel)]="cuentaOrigen" class="border p-2 rounded w-full mb-4">
+    <option *ngFor="let c of cuentas" [value]="c.id">{{ c.tipo | titlecase }} — {{ c.saldo | currency:'COP':'symbol-narrow' }}</option>
+  </select>
+
+  <label class="block mb-2">Monto a pagar:</label>
+  <input type="number" [(ngModel)]="monto" class="border p-2 rounded w-full mb-4" />
+
+  <div class="flex gap-2">
+    <button class="btn btn-primary" (click)="iniciarPago()" [disabled]="loading">Iniciar pago</button>
+    <button class="btn btn-secondary" (click)="loadUserAccounts()">Recargar cuentas</button>
+  </div>
+
+  <div *ngIf="otpRequired" class="mt-4">
+    <label class="block mb-2">Código OTP:</label>
+    <input type="text" [(ngModel)]="otpCode" class="border p-2 rounded w-full mb-2" />
+    <button class="btn btn-primary" (click)="confirmarOtp()" [disabled]="loading">Confirmar OTP</button>
+  </div>
+
+  <p *ngIf="mensaje" class="mt-3 text-green-700">{{ mensaje }}</p>
+  <p *ngIf="error" class="mt-3 text-red-600">{{ error }}</p>
+
+  <div *ngIf="receipt" class="mt-3 p-3 border rounded bg-white">
+    <p><strong>Comprobante:</strong> {{ receipt.comprobanteId }}</p>
+    <p><strong>Monto:</strong> {{ receipt.monto | currency:'COP':'symbol-narrow' }}</p>
+    <p><strong>Tarjeta:</strong> {{ receipt.tarjetaId }}</p>
+    <p><strong>Cuenta origen:</strong> {{ receipt.cuentaOrigenId }}</p>
+    <p><strong>Fecha:</strong> {{ receipt.fecha | date:'short' }}</p>
+  </div>
+</section>

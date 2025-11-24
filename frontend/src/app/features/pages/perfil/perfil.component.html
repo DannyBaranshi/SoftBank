@@ -1,0 +1,62 @@
+<div class="perfil-container" *ngIf="usuarioActual() as usuario; else noUser">
+  <h1>Perfil de Usuario</h1>
+
+  <section class="user-info">
+    <h2>Información Personal</h2>
+    <p><strong>Nombre de usuario:</strong> {{ usuario.username }}</p>
+    <p><strong>Email:</strong> {{ usuario.email }}</p>
+  <div *ngIf="usuario.cuentas?.length">
+    <h3>Cuentas Asociadas</h3>
+    <ul>
+      <li *ngFor="let cuenta of usuario.cuentas">
+        {{ cuenta.tipo }} - {{ cuenta.id }}
+      </li>
+    </ul>
+  </div>
+  </section>
+
+  <section class="change-password">
+    <h2>Cambiar Contraseña</h2>
+    <form (ngSubmit)="cambiarContrasena()">
+      <label for="currentPassword">Contraseña Actual</label>
+      <input
+        id="currentPassword"
+        type="password"
+        [ngModel]="currentPassword()"
+        (ngModelChange)="currentPassword.set($event)"
+        name="currentPassword"
+        required
+      />
+
+      <label for="newPassword">Nueva Contraseña</label>
+      <input
+        id="newPassword"
+        type="password"
+        [ngModel]="newPassword()"
+        (ngModelChange)="newPassword.set($event)"
+        name="newPassword"
+        required
+      />
+
+      <label for="confirmPassword">Confirmar Nueva Contraseña</label>
+      <input
+        id="confirmPassword"
+        type="password"
+        [ngModel]="confirmPassword()"
+        (ngModelChange)="confirmPassword.set($event)"
+        name="confirmPassword"
+        required
+      />
+
+      <button type="submit">Cambiar Contraseña</button>
+    </form>
+
+    <div *ngIf="message()" class="message">
+      {{ message() }}
+    </div>
+  </section>
+</div>
+
+<ng-template #noUser>
+  <p>No hay usuario autenticado.</p>
+</ng-template>

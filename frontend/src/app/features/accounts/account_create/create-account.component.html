@@ -1,0 +1,20 @@
+<!-- src/app/features/accounts/create-account/create-account.component.html -->
+
+<section class="p-6">
+  <h2 class="text-xl font-semibold mb-4">Crear Nueva Cuenta</h2>
+
+  <form (ngSubmit)="crearCuenta()">
+    <label class="block mb-2">
+      <span>Tipo de cuenta</span>
+      <select [(ngModel)]="tipo" name="tipo" class="border rounded p-2 w-full mt-1">
+        <option value="ahorros">Ahorros</option>
+        <option value="corriente">Corriente</option>
+      </select>
+    </label>
+
+    <button type="submit" class="btn btn-primary mt-4">Crear</button>
+  </form>
+
+  <p *ngIf="mensaje" class="mt-3 text-sm text-blue-600">{{ mensaje }}</p>
+</section>
+

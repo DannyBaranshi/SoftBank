@@ -1,0 +1,157 @@
+.cuentas-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  color: #e0e0e0;
+  background-color: #121212;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+.cuentas-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #00c6ff;
+}
+
+.cuentas-container p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #c5c5c5;
+}
+
+.cuenta-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 300px;
+  text-align: left;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.cuenta-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-3px);
+}
+
+.cuenta-card h3 {
+  font-size: 1.2rem;
+  color: #7dd3fc;
+  margin-bottom: 0.5rem;
+}
+
+.cuenta-card p {
+  margin: 0.3rem 0;
+  color: #bdbdbd;
+}
+
+button {
+  background-color: #00c6ff;
+  color: #121212;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #14a2d8;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.account-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.account-tile {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  width: 220px;
+  cursor: pointer;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.account-tile:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0,198,255,0.12);
+}
+
+.account-tile:focus-visible {
+  outline: 3px solid rgba(0,198,255,0.18);
+}
+
+.account-tile:hover {
+  transform: translateY(-4px);
+}
+
+.account-tile.selected {
+  border-color: rgba(0,198,255,0.9);
+  box-shadow: 0 6px 18px rgba(0,198,255,0.08);
+  background: rgba(0,198,255,0.02);
+}
+
+.tile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.tile-header .type {
+  color: #7dd3fc;
+  font-weight: 700;
+}
+
+.tile-body .balance {
+  font-weight: 700;
+  color: #e6edf2;
+}
+
+.consult-section .actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.15);
+  border-top-color: #00c6ff;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.result-card {
+  background: rgba(255,255,255,0.03);
+  padding: 0.8rem;
+  border-radius: 8px;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #00c6ff;
+  border: 1px solid rgba(0,198,255,0.18);
+}

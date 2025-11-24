@@ -1,0 +1,13 @@
+<div class="box">
+  <input 
+    type="text" 
+    placeholder="Search..." 
+    [(ngModel)]="query"
+    (keyup.enter)="onSearch()" />
+    
+  <button type="button" (click)="onSearch()">
+    <i class="fas fa-search"></i>
+  </button>
+</div>
+
+<app-search-results [results]="results"></app-search-results>

@@ -1,0 +1,56 @@
+.certificados-container {
+  padding: 2rem;
+  color: #1b4160;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.intro {
+  color: #555;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.certificado-card {
+  background: white;
+  border: 1px solid #2596be;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.certificado-card h3 {
+  color: #2596be;
+}
+
+.fecha {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.btn-primary {
+  background-color: #2596be;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.btn-primary:hover {
+  background-color: #1b4160;
+}
+
+.no-data {
+  text-align: center;
+  color: #777;
+  margin-top: 2rem;
+}

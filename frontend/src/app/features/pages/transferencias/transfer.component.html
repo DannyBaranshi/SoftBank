@@ -1,0 +1,44 @@
+<!-- src/app/features/transferencias/transferencias.component.html -->
+
+<section class="p-6">
+  <h2 class="text-2xl mb-4 font-semibold">Transferencias</h2>
+
+  <label class="block mb-2">Cuenta origen:</label>
+  <select [(ngModel)]="origen" class="border p-2 rounded w-full mb-4">
+    <option *ngFor="let c of cuentas" [value]="c.id">
+      {{ c.tipo | titlecase }} - {{ c.saldo | currency:'COP':'symbol-narrow' }}
+    </option>
+  </select>
+
+  <label class="block mb-2">Cuenta destino:</label>
+  <select *ngIf="destinos.length > 0" [(ngModel)]="destino" class="border p-2 rounded w-full mb-4">
+    <option *ngFor="let d of destinos" [value]="d.id">{{ d.tipo | titlecase }} — {{ d.id }} — {{ d.fechaCreacion | date:'shortDate' }}</option>
+  </select>
+  <div *ngIf="destinos.length === 0">
+    <label class="block mb-2">Cuenta destino (ID):</label>
+    <input type="text" [(ngModel)]="destino" class="border p-2 rounded w-full mb-4" placeholder="Ingrese ID de cuenta destino" />
+  </div>
+
+  <label class="block mb-2">Monto:</label>
+  <input type="number" [(ngModel)]="monto" class="border p-2 rounded w-full mb-4" />
+
+  <button (click)="transferir()" class="btn btn-primary">Transferir</button>
+  <div class="mt-3 flex flex-col gap-2">
+    <div *ngIf="otpRequired" class="otp-box">
+      <label class="block mb-2">Código OTP:</label>
+      <input type="text" [(ngModel)]="otpCode" class="border p-2 rounded w-full mb-2" />
+      <button type="button" class="btn btn-primary" (click)="confirmOtp()" [disabled]="loading">Confirmar OTP</button>
+    </div>
+
+    <p *ngIf="mensaje" class="mt-2 text-blue-700">{{ mensaje }}</p>
+    <p *ngIf="error" class="mt-2 text-red-600">{{ error }}</p>
+
+    <div *ngIf="receipt" class="receipt mt-2 p-3 border rounded bg-white">
+      <p><strong>Comprobante:</strong> {{ receipt.comprobanteId }}</p>
+      <p><strong>Monto:</strong> {{ receipt.monto | currency:'COP':'symbol-narrow' }}</p>
+      <p><strong>Origen:</strong> {{ receipt.origenId }}</p>
+      <p><strong>Destino:</strong> {{ receipt.destinoId }}</p>
+      <p><strong>Fecha:</strong> {{ receipt.fecha | date:'short' }}</p>
+    </div>
+  </div>
+</section>

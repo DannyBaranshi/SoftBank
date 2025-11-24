@@ -1,0 +1,22 @@
+.results-box {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #2596be;
+  border-radius: 5px;
+  background: #f0f8ff;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  padding: 5px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+li:hover {
+  background: #d0eaff;
+}

@@ -1,0 +1,38 @@
+.section {
+  max-width: 540px;
+  margin: 2rem auto;
+  background-color: #f9fafb;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.h2 {
+  text-align: center;
+  color: #1e293b;
+}
+
+.select,
+.input {
+  border: 1px solid #cbd5e1;
+  background-color: white;
+  transition: border-color 0.2s;
+}
+
+.select:focus,
+.input:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.p {
+  text-align: center;
+  color: #1d4ed8;
+  font-weight: 500;
+}

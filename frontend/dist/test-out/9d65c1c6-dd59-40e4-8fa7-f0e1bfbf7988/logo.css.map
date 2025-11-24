@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/header/logo/logo.scss"],
+  "sourcesContent": [".logo-circle {\r\n  width: 50px;       \r\n  height: 50px;\r\n  border-radius: 50%;\r\n  background-color: gray;\r\n  display: inline-block;\r\n  cursor: pointer;    \r\n}"],
+  "mappings": ";AAAA,CAAA;AACE,SAAA;AACA,UAAA;AACA,iBAAA;AACA,oBAAA;AACA,WAAA;AACA,UAAA;;",
+  "names": []
+}

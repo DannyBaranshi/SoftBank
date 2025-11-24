@@ -1,0 +1,38 @@
+<!-- src/app/features/accounts/accounts.component.html -->
+
+<section class="cuentas-container">
+  <h2 class="text-2xl font-semibold mb-4">Mis Cuentas</h2>
+
+  <div *ngIf="cuentas.length === 0; else lista">
+    <p>No tiene cuentas activas.</p>
+    <button class="btn btn-primary mt-3" (click)="crearNueva()">Crear nueva cuenta</button>
+  </div>
+
+  <ng-template #lista>
+      <div class="account-grid" role="list">
+        <div *ngFor="let cuenta of cuentas" role="listitem">
+
+          <div
+            class="account-tile"
+            role="button"
+            aria-pressed="{{ isSelected(cuenta.id) }}"
+            (click)="selectCuenta(cuenta.id)"
+            (keydown)="onTileKeydown($event, cuenta.id)"
+            [class.selected]="isSelected(cuenta.id)"
+            tabindex="0"
+            >
+          <div class="tile-header">
+            <span class="type">{{ cuenta.tipo | titlecase }}</span>
+            <span class="id">{{ cuenta.id }}</span>
+          </div>
+          <div class="tile-body">
+            <div class="balance">{{ cuenta.saldo | currency:'COP':'symbol-narrow' }}</div>
+            <div class="created">{{ cuenta.fechaCreacion | date:'short' }}</div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <button *ngIf="!(hasAhorros && hasCorriente)" type="button" class="btn btn-primary mt-4" (click)="crearNueva()">Agregar otra cuenta</button>
+  </ng-template>
+</section>

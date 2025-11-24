@@ -1,0 +1,94 @@
+<div class="productos-container">
+  <h1 class="page-title">Nuestros Productos</h1>
+
+  <!-- Productos Disponibles -->
+  <div class="productos-grid">
+    <div *ngFor="let producto of productos" class="producto-card">
+      <h3>{{ producto.nombre }}</h3>
+      <p>{{ producto.descripcion }}</p>
+      <button class="btn-primary" (click)="verProducto(producto)">
+        {{ isLoggedIn() ? 'Ver Detalle' : 'Más Información' }}
+      </button>
+    </div>
+  </div>
+
+ <!-- Modal Detalle de Producto -->
+<div class="modal-overlay" *ngIf="productoSeleccionado">
+  <div class="modal">
+    <h2>{{ productoSeleccionado.nombre }}</h2>
+    <p>{{ productoSeleccionado.descripcionLarga }}</p>
+
+    <!-- Simulador y acciones -->
+    <div *ngIf="isLoggedIn(); else loginPrompt">
+
+      @switch (productoSeleccionado.id) {
+  @case (3) {
+    <app-pago-tarjeta></app-pago-tarjeta>
+  }
+  @case (6) {
+    <h3>Simulador Financiero</h3>
+      <form class="simulador" role="form" aria-labelledby="simulador-title" (ngSubmit)="simularFinanciero()">
+        <div>
+          <label for="monto">Monto ($)</label>
+          <input id="monto" name="monto" type="number" min="0" step="1000" aria-describedby="monto-desc" required [(ngModel)]="montoSimulado" />
+          <div id="monto-desc" class="sr-only">Ingrese el monto del crédito en pesos colombianos</div>
+        </div>
+
+        <div>
+          <label for="tasa">Tasa de interés anual (%)</label>
+          <input id="tasa" name="tasa" type="number" min="0" step="0.01" required [(ngModel)]="tasaInteres" />
+        </div>
+
+        <div>
+          <label for="plazo">Plazo (meses)</label>
+          <input id="plazo" name="plazo" type="number" min="1" step="1" required [(ngModel)]="plazoMeses" />
+        </div>
+
+        <fieldset aria-label="Tipo de cálculo">
+          <legend>Tipo de cálculo</legend>
+          <label><input type="radio" name="tipo" value="simple" [(ngModel)]="tipoCalculo" /> Interés Simple</label>
+          <label style="margin-left:1rem;"><input type="radio" name="tipo" value="compuesto" [(ngModel)]="tipoCalculo" /> Interés Compuesto</label>
+        </fieldset>
+
+        <div>
+          <label><input type="checkbox" [(ngModel)]="aplicar4x1000" /> Aplicar descuento 4x1000</label>
+        </div>
+
+        <div class="sim-actions">
+          <button class="btn-primary" type="submit">Simular</button>
+        </div>
+
+        <p *ngIf="formError" role="alert" class="form-error">{{ formError }}</p>
+
+        <div *ngIf="resultadoSimulacion" class="resultado" aria-live="polite" id="sim-result">
+          <p>Total a pagar: <strong>{{ resultadoSimulacion.total | currency:'COP':'symbol-narrow' }}</strong></p>
+          <p>Cuota mensual aproximada: <strong>{{ resultadoSimulacion.cuota | currency:'COP':'symbol-narrow' }}</strong></p>
+          <p *ngIf="resultadoSimulacion.interesesTotales !== undefined">Intereses totales estimados: <strong>{{ resultadoSimulacion.interesesTotales | currency:'COP':'symbol-narrow' }}</strong></p>
+        </div>
+      </form>
+
+      <button class="btn-primary" (click)="adquirirProducto(productoSeleccionado!)">
+        Solicitar Producto
+      </button>
+  }
+  @default {
+    <button class="btn-primary" (click)="adquirirProducto(productoSeleccionado!)">
+      Solicitar Producto
+    </button>
+  }
+}
+
+
+      
+    </div>
+
+    <!-- Template alternativo para no autenticados -->
+    <ng-template #loginPrompt>
+      <p>Inicia sesión para adquirir este producto.</p>
+      <button class="btn-secondary" (click)="redirigirLogin()">Ir a Inicio de Sesión</button>
+    </ng-template>
+
+    <button class="btn-secondary cerrar" (click)="cerrarModal()">Cerrar</button>
+  </div>
+</div>
+

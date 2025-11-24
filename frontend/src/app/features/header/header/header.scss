@@ -1,0 +1,61 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 2px solid #2596be;
+  font-family: 'Courier New', Courier, monospace;
+  color: #2596be;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid #fff;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin: 0 20px;
+}
+
+.nav button {
+  background: transparent;
+  color: #2596be;
+  border: none;
+  font-size: 16px;
+  margin: 0 10px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.nav button.active,
+.nav button:hover {
+  color: #1b4160;
+  text-decoration: none;
+}
+
+.search-component {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.hamburger-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+}
+
+.hamburger-icon {
+  color: white;
+  font-size: 24px;
+  cursor: default;
+}

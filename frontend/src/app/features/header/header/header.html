@@ -1,0 +1,12 @@
+<header class="header">
+  <app-logo class="logo"></app-logo>
+
+  <nav class="nav">
+    <button (click)="navigateTo('/inicio')" routerLinkActive="active">Inicio</button>
+    <button (click)="navigateTo('/productos')" routerLinkActive="active">Productos</button>
+    <button (click)="navigateTo('/informacion')" routerLinkActive="active">Información</button>
+    <app-search class="search-component"></app-search>
+  </nav>
+
+  <app-hamburguer-menu></app-hamburguer-menu>
+</header>

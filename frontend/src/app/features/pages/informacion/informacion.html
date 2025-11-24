@@ -1,0 +1,29 @@
+<div class="info-container">
+  <div class="banner-info">
+    <h2>Información Institucional</h2>
+    <p>Conoce los detalles del banco, sus políticas y documentos oficiales.</p>
+  </div>
+
+  <div class="articulos">
+    <div *ngFor="let art of articulos" class="articulo-card">
+      <h3>{{ art.titulo }}</h3>
+      <p>{{ art.descripcion }}</p>
+
+      <div class="acciones">
+        <button *ngIf="art.tipo === 'legal'" class="btn-secondary" (click)="descargarDocumento(art)">
+          Descargar
+        </button>
+        <button *ngIf="isLoggedIn()" class="btn-primary" (click)="guardarArticulo(art)">
+          Guardar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="isLoggedIn()" class="guardados-section">
+    <h2>Mis artículos guardados</h2>
+    <ul>
+      <li *ngFor="let g of articulosGuardados">{{ g.titulo }}</li>
+    </ul>
+  </div>
+</div>

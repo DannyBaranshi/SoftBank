@@ -1,0 +1,79 @@
+<div class="inicio-container">
+  <!-- 🌐 VISTA PÚBLICA -->
+  <div *ngIf="!usuarioActual?.()">
+    <div class="banner">
+      <button class="arrow left" (click)="anteriorImagen()">&#10094;</button>
+      <img [src]="imagenes[indiceActual]" alt="Publicidad" class="banner-img" />
+      <button class="arrow right" (click)="siguienteImagen()">&#10095;</button>
+    </div>
+
+    <div class="dots">
+      <span [class.active]="indiceActual === 0" (click)="cambiarImagen(0)"></span>
+      <span [class.active]="indiceActual === 1" (click)="cambiarImagen(1)"></span>
+    </div>
+
+    <div class="intro-text">
+      <p>Bienvenido al Banco. Conoce nuestros servicios y oportunidades financieras.</p>
+    </div>
+
+    <div class="productos-grid">
+      <div class="producto-card" (click)="irAProducto('ahorros')">
+        <h3>Cuenta de Ahorros</h3>
+      </div>
+      <div class="producto-card" (click)="irAProducto('consumo')">
+        <h3>Crédito de Consumo</h3>
+      </div>
+      <div class="producto-card" (click)="irAProducto('tarjeta')">
+        <h3>Tarjeta de Crédito</h3>
+      </div>
+      <div class="producto-card" (click)="irAProducto('cdt')">
+        <h3>CDT</h3>
+      </div>
+      <div class="producto-card" (click)="irAProducto('empresarial')">
+        <h3>Cuenta Empresarial</h3>
+      </div>
+    </div>
+
+    <footer>
+      <p>©Copyright Banco 2025</p>
+      <p>Vigilado por Superintendencia Financiera de Colombia</p>
+    </footer>
+  </div>
+
+  <!-- 💼 VISTA PRIVADA (Sesión iniciada) -->
+  <div *ngIf="usuarioActual?.()" class="dashboard-container">
+    <h2>Bienvenido, {{ usuarioActual!()?.username }}</h2>
+
+    <div class="dashboard-grid">
+      <div class="dashboard-card" (click)="irASeccion('/cuentas')">
+        <h3>Mis Cuentas</h3>
+        <p>Consulta y administra tus cuentas bancarias.</p>
+      </div>
+
+      <div class="dashboard-card" (click)="irASeccion('/transferencias')">
+        <h3>Transacciones</h3>
+        <p>Realiza transferencias y pagos de forma segura.</p>
+      </div>
+
+      <div class="dashboard-card" (click)="irASeccion('/saldo')">
+        <h3>Saldo</h3>
+        <p>Consulta el saldo y los movimientos recientes.</p>
+      </div>
+
+      <div class="dashboard-card" (click)="irASeccion('/certificados')">
+        <h3>Certificados</h3>
+        <p>Descarga certificados y constancias bancarias.</p>
+      </div>
+
+      <div class="dashboard-card" (click)="irASeccion('/perfil')">
+        <h3>Perfil</h3>
+        <p>Actualiza tus datos personales y preferencias.</p>
+      </div>
+
+      <div class="dashboard-card cerrar-sesion" (click)="cerrarSesion()">
+        <h3>Cerrar Sesión</h3>
+        <p>Salir de tu cuenta de forma segura.</p>
+      </div>
+    </div>
+  </div>
+</div>

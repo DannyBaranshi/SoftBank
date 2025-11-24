@@ -1,0 +1,24 @@
+<div class="ordenar-container">
+  <h1>Ordenar Mis Productos</h1>
+
+  <p class="descripcion">
+    Puedes cambiar el orden de prioridad de tus productos según su importancia para ti.
+  </p>
+
+  <ul class="lista-productos">
+    <li *ngFor="let p of productos(); let i = index" class="producto-item">
+      <div class="info">
+        <strong>{{ p.nombre }}</strong>
+        <p>{{ p.descripcion }}</p>
+      </div>
+      <div class="acciones">
+        <button (click)="moverArriba(i)">⬆</button>
+        <button (click)="moverAbajo(i)">⬇</button>
+      </div>
+    </li>
+  </ul>
+
+  <button class="btn-primary guardar" (click)="guardarOrden()">Guardar Cambios</button>
+
+  <p *ngIf="mensajeConfirmacion" class="mensaje-exito">{{ mensajeConfirmacion }}</p>
+</div>
